@@ -17,9 +17,8 @@ class ActiveSupport::TestCase
   def log_in_as(user)
     session[:user_id] = user.id
   end
-end
 
-class ActionDispatch::IntegrationTest
+  class ActionDispatch::IntegrationTest
 
   # Log in as a particular user.
   def log_in_as(user, password: 'password', remember_me: '1')
@@ -27,4 +26,10 @@ class ActionDispatch::IntegrationTest
                                           password: password,
                                           remember_me: remember_me } }
   end
+
+
+   include ApplicationHelper
+
+  # Add more helper methods to be used by all tests here...
+end
 end
