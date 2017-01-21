@@ -4,7 +4,13 @@ class UserMailer < ApplicationMailer
   # with the following lookup:
   #
   #   en.user_mailer.account_activation.subject
-  #
+
+    def account_activation(user)
+    @user = user
+    mail to: user.email, subject: "Account activation"
+  end
+
+
   def account_activation
     @greeting = "Hi"
 
